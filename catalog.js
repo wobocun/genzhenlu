@@ -42,13 +42,13 @@
   C.init = function () {
     if (C.ready) return C.ready;
     C.ready = Promise.all([
-      getJSON('data/herbs.json'),
-      getJSON('data/western.json'),
-      getJSON('data/patent.json'),
-      getJSON('data/acupoints.json'),
-      getJSON('data/acupoints_pinyin.json'),
-      getJSON('data/units.json'),
-      getJSON('data/decoctions.json')
+      getJSON('herbs.json'),
+      getJSON('western.json'),
+      getJSON('patent.json'),
+      getJSON('acupoints.json'),
+      getJSON('acupoints_pinyin.json'),
+      getJSON('units.json'),
+      getJSON('decoctions.json')
     ]).then(function (res) {
       C.herbs = res[0].map(function (h) {
         return {
